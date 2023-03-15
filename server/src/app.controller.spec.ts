@@ -1,5 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
+import { AppRepositoryTag } from './app.repository';
+import { AppRepositoryHashmap } from './app.repository.hashmap';
 import { AppService } from './app.service';
 
 describe('AppController', () => {
@@ -8,7 +10,10 @@ describe('AppController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [
+        AppService,
+        { provide: AppRepositoryTag, useClass: AppRepositoryHashmap },
+      ],
     }).compile();
 
     appController = app.get<AppController>(AppController);
