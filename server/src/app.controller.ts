@@ -29,8 +29,11 @@ export class AppController {
 
   @Get(':hash')
   @Redirect()
-  async retrieveAndRedirect(@Param('hash') hash): Promise<{ url: string }> {
+  async retrieveAndRedirect(@Param('hash') hash): Promise<{ url: string } | ErrorResponse> {
     const url = await this.appService.retrieve(hash);
+    if (!url) {
+      return { error: `Invalid request. Please provide a valid URL.`, code: 400 };
+    }
     return { url };
   }
 }
