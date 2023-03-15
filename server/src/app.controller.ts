@@ -11,7 +11,7 @@ export class AppController {
   }
 
   @Post('shorten')
-  shorten(@Query('url') url: string) {
-    return undefined;
+  shorten(@Query('url') url: string): string {
+    return this.appService.shorten(url);
   }
 }
