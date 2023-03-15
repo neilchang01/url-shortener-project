@@ -11,4 +11,8 @@ export class AppService {
     const hash = Math.random().toString(36).slice(7); //temp
     return hash;
   }
+
+  retrieve(hash: string): string {
+    return undefined;
+  }
 }
