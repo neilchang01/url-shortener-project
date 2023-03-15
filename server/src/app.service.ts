@@ -1,18 +1,23 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { AppRepository, AppRepositoryTag } from './app.repository';
 
 @Injectable()
 export class AppService {
+  constructor(
+    @Inject(AppRepositoryTag) private readonly appRepository: AppRepository,
+  ) {}
 
   getHello(): string {
     return 'Hello World!';
   }
 
-  shorten(url: string): string {
-    const hash = Math.random().toString(36).slice(7); //temp
-    return hash;
+  retrieve(hash: string): string {
+    return this.appRepository.get(hash);
   }
 
-  retrieve(hash: string): string {
-    return undefined;
+  shorten(url: string): string {
+    const hash = Math.random().toString(36).slice(7);
+    this.appRepository.put(hash, url);
+    return hash;
   }
 }

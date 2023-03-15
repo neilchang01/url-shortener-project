@@ -18,8 +18,8 @@ describe('AppService', () => {
   });
 
   describe('retrieve', () => {
-    it('should retrieve the saved URL', async () => {
-      const url = 'aerabi.com';
+    it('should retrieve saved URL', async () => {
+      const url = 'test.com';
       const hash = await appService.shorten(url);
       const retrieved = await appService.retrieve(hash);
       expect(retrieved).toEqual(url);
