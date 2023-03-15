@@ -2,6 +2,7 @@ import { Test, TestingModule } from "@nestjs/testing";
 import { AppService } from "./app.service";
 import { AppRepositoryTag } from "./app.repository";
 import { AppRepositoryHashmap } from "./app.repository.hashmap";
+import { AppRepositoryRedis } from "./app.repository.redis";
 
 describe('AppService', () => {
   let appService: AppService;
@@ -9,7 +10,7 @@ describe('AppService', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       providers: [
-        { provide: AppRepositoryTag, useClass: AppRepositoryHashmap },
+        { provide: AppRepositoryTag, useClass: AppRepositoryRedis },
         AppService,
       ],
     }).compile();

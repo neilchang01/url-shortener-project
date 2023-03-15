@@ -1,6 +1,6 @@
 export interface AppRepository {
-    put(hash: string, url: string): string;
-    get(hash: string): string;
+    put(hash: string, url: string): Promise<string>;
+    get(hash: string): Promise<string>;
   }
   
   export const AppRepositoryTag = 'AppRepository';

@@ -7,11 +7,11 @@ export class AppRepositoryHashmap implements AppRepository {
     this.hashMap = new Map<string, string>();
   }
 
-  get(hash: string): string {
+  async get(hash: string): Promise<string> {
     return this.hashMap.get(hash);
   }
 
-  put(hash: string, url: string): string {
+  async put(hash: string, url: string): Promise<string> {
     return this.hashMap.set(hash, url).get(hash);
   }
 }

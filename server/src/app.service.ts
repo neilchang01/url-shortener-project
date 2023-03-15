@@ -11,7 +11,7 @@ export class AppService {
     return 'Hello World!';
   }
 
-  retrieve(hash: string): string {
+  retrieve(hash: string): Promise<string> {
     return this.appRepository.get(hash);
   }
 
