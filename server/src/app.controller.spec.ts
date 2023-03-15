@@ -19,4 +19,12 @@ describe('AppController', () => {
       expect(appController.getHello()).toBe('Hello World!');
     });
   });
+
+  describe('shorten', () => {
+    it('should return a valid string', () => {
+      const url = 'test.com';
+      const hash = appController.shorten(url);
+      expect(hash).toBeTruthy();
+    })
+  });
 });
