@@ -1,6 +1,10 @@
 # URL Shortener
 
-This is a URL shortener app built with Nest.js and Redis.
+This is a URL shortener app built with:
+
+- Frontend: ReactJs
+- Backend: Nestjs
+- Database: Redis.
 
 ## Installation
 
@@ -37,6 +41,10 @@ Note that Redis instance should load AOF file on server start.
 Once the server and Redis are up and running, open your browser and go to http://localhost:3000. You should see "Hello world!".
 
 ## Usage
+
+To create a shortened URL, run the container for your server and head to: https://url-shortener-nc.netlify.app/ to test it out!
+
+### Alternative
 
 To create a shortened URL, run the following command in the terminal:
 
