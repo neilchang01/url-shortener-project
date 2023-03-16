@@ -65,3 +65,7 @@ Alternatively, you can use api platforms like **Postman** to consume the api, an
 ```
 
 Now you can visit http://localhost:3000/06scro in your browser, and you will be redirected to https://github.com.
+
+### Acknowledgements
+
+<sub><sup><a href="https://www.freepik.com/free-vector/abstract-colorful-background-with-different-shapes_16099159.htm#query=art%20abstract&position=43&from_view=search&track=ais">Image by pikisuperstar</a> on Freepik | SVG from <a href="https://undraw.co">undraw</a></sup></sub>
