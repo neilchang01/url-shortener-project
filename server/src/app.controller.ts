@@ -22,8 +22,13 @@ export class AppController {
   @Post('shorten')
   shorten(@Body('url') url: string): ShortenResponse | ErrorResponse {
     if (!url) {
-      return { error: `Invalid request. Please provide a valid URL in the query parameter 'url'. Example: {'url': 'https://example.com'}.`, code: 400 };
+      return { error: `Invalid request. Please provide a valid URL. Example: 'https://example.com'.`, code: 400 };
     };
+
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+      return { error: `Invalid request. Please provide a valid URL. Example: 'https://example.com'.`, code: 400 };
+
+    }
     return { hash: this.appService.shorten(url) };
   }
 
