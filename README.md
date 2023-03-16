@@ -3,8 +3,8 @@
 This is a URL shortener app built with:
 
 - Frontend: ReactJs
-- Backend: Nestjs
-- Database: Redis.
+- Backend: NestJs
+- Database: Redis
 
 ## Installation
 
@@ -42,7 +42,7 @@ Once the server and Redis are up and running, open your browser and go to http:/
 
 ## Usage
 
-To create a shortened URL, run the container for your server and head to: https://url-shortener-nc.netlify.app/ to test it out!
+To create a shortened URL, head to https://url-shortener-nc.netlify.app/ to test it out!
 
 ### Alternative
 
