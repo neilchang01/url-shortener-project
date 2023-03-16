@@ -18,6 +18,7 @@ describe('AppService', () => {
     appService = app.get<AppService>(AppService);
   });
 
+  // Test this with the in-memory hashmap DB
   describe('retrieve', () => {
     it('should retrieve saved URL', async () => {
       const url = 'test.com';
