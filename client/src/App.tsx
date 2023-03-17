@@ -1,6 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 import axios from "axios";
+import Header from "./components/Header";
+import ErrorMsg from "./components/ErrorMsg";
+import Form from "./components/Form";
+import UrlHistory from "./components/UrlHistory";
 
 function App() {
   const [url, setUrl] = useState("");
@@ -63,71 +67,17 @@ function App() {
 
   return (
     <div className="App">
-      <img src="/images/undraw-link.svg" className="hero-image" />
-      <h1>URL Shortener</h1>
-      {errorMessage && <p className="error">{errorMessage}</p>}
-      <form onSubmit={handleSubmit} className="form">
-        <input
-          type="text"
-          placeholder="Enter URL here"
-          value={url}
-          className="form-input"
-          required
-          onChange={handleChange}
-        />
-        {isCopy ? (
-          <button
-            className="form-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              navigator.clipboard.writeText(url);
-              setIsCopied(true);
-            }}
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
-        ) : (
-          <button type="submit" className="form-btn">
-            Shorten
-          </button>
-        )}
-      </form>
-      <table className="url-history">
-        {urlHistory.length > 0 && (
-          <>
-            <thead>
-              <tr>
-                <th>Origin</th>
-                <th>Shortened</th>
-              </tr>
-            </thead>
-            <tbody>
-              {urlHistory.map((link) => (
-                <tr key={link.origin} className="url-history-item">
-                  <td>
-                    <a
-                      className="history-origin-link"
-                      href={link.origin}
-                      target="_blank"
-                    >
-                      {link.origin}
-                    </a>
-                  </td>
-                  <td>
-                    <a
-                      className="history-shortened-link"
-                      href={link.shortened}
-                      target="_blank"
-                    >
-                      {link.shortened}
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </>
-        )}
-      </table>
+      <Header />
+      {errorMessage && <ErrorMsg message={errorMessage} />}
+      <Form
+        url={url}
+        isCopy={isCopy}
+        isCopied={isCopied}
+        setIsCopied={setIsCopied}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+      />
+      {urlHistory.length > 0 && <UrlHistory urlHistory={urlHistory} />}
     </div>
   );
 }
