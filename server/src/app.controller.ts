@@ -32,6 +32,7 @@ export class AppController {
     return { hash: this.appService.shorten(url) };
   }
 
+  // Redirect shortened link
   @Get(':hash')
   @Redirect()
   async retrieveAndRedirect(@Param('hash') hash): Promise<{ url: string } | ErrorResponse> {
