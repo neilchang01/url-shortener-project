@@ -39,7 +39,7 @@ const Form = ({
           {isCopied ? "Copied!" : "Copy"}
         </button>
       ) : (
-        <button type="submit" className="form-btn">
+        <button type="submit" className="form-btn" data-testid="submit-button">
           Shorten
         </button>
       )}
