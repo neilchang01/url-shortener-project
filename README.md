@@ -6,6 +6,14 @@ This is a URL shortener app built with:
 - Backend: NestJs
 - Database: Redis
 
+Please use **Chrome** for the best experience.
+
+- Web: https://url-shortener-nc.netlify.app/
+
+- Server: Run the docker container locally.
+
+_\*Make sure your have <a href="https://docs.docker.com/engine/install/" target="_blank">Docker</a> installed_
+
 ## Installation
 
 ### To run this app on your machine, follow these steps:
