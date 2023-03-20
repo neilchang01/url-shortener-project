@@ -20,7 +20,7 @@ const Form = ({
   return (
     <form onSubmit={handleSubmit} className="form">
       <input
-        type="text"
+        type="url"
         placeholder="Enter URL here"
         value={url}
         className="form-input"
