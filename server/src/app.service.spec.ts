@@ -10,7 +10,7 @@ describe('AppService', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       providers: [
-        { provide: AppRepositoryTag, useClass: AppRepositoryRedis },
+        { provide: AppRepositoryTag, useClass: AppRepositoryHashmap },
         AppService,
       ],
     }).compile();
